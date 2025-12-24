@@ -70,18 +70,18 @@ h1 {
 .main-content-grid {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
-  gap: 40px;
+  gap: 50px;
   align-items: start;
 }
 
 .why-register-box {
   position: relative;
   background-image: url('../images/background.png');
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   padding: 20px;
   border-radius: 20px;
-  min-height: 900px;
+  min-height: 795px;
   display: flex;
   flex-direction: column;
   background-color: #ECF1FA;
