@@ -65,6 +65,8 @@ function updateLabel() {
     label.innerText = checked.length + " Levels Selected";
     selectAll.checked = false;
   }
+
+  document.getElementById("checkboxes").style.display = "none";
 }
 
 window.onclick = function(event) {
