@@ -45,6 +45,7 @@ h1, h2, h3 {
   align-items: center;
   margin-bottom: 50px;
   gap: 30px;
+  animation: fadeInUp 0.8s ease-out forwards;
 }
 
 h1 {
@@ -60,6 +61,20 @@ h1 {
   line-height: 1.6;
   max-width: 800px;
   margin-top: 0;
+}
+
+.header-text-content h1 {
+  font-size: 50px;
+  margin: 0 0 15px 0;
+  color: var(--primary-color);
+  line-height: 1.2;
+}
+
+.event-description {
+  font-size: 20px;
+  color: var(--text-grey);
+  line-height: 1.6;
+  max-width: 600px;
 }
 
 .main-logo {

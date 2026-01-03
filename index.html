@@ -11,20 +11,39 @@
 
     <main class="container">
       <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kodeit Educator Event Registration</title>
-    <link rel="stylesheet" href="css/style.css" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Kodeit Educator Event Registration</title>
+        <link rel="stylesheet" href="css/style.css" />
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    
-    <script type="text/javascript">
-      (function(){
-          emailjs.init("9OmpRiJU4LVcLgMQB"); 
-      })();
-    </script>
-</head>
+        <script
+          type="text/javascript"
+          src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+        ></script>
 
+        <script type="text/javascript">
+          (function () {
+            emailjs.init("9OmpRiJU4LVcLgMQB");
+          })();
+        </script>
+      </head>
+      <header class="event-header">
+        <div class="header-content">
+          <h1>Kodeit Educator Event</h1>
+          <p class="event-description">
+            Join us for an exciting Kodeit Educator Event! Learn new skills,
+            connect with peers, and discover innovative teaching methods.
+            Register now to secure your spot!
+          </p>
+        </div>
+        <div class="header-logo">
+          <img
+            src="images/Kodit_logo.png"
+            alt="Kodeit Logo"
+            class="main-logo"
+          />
+        </div>
+      </header>
       <div class="main-content-grid">
         <section class="left-column">
           <div class="why-register-box">
@@ -218,6 +237,18 @@
                       />
                       KG
                     </label>
+
+                    <label class="checkbox-option">
+                      <input
+                        type="checkbox"
+                        name="grade_levels[]"
+                        class="grade-chk"
+                        value="Secondary"
+                        onchange="updateLabel()"
+                      />
+                      Kindergarten
+                    </label>
+
                     <label class="checkbox-option">
                       <input
                         type="checkbox"
@@ -249,6 +280,28 @@
                       Secondary
                     </label>
 
+                    <!-- <label class="checkbox-option">
+                      <input
+                        type="checkbox"
+                        name="grade_levels[]"
+                        class="grade-chk"
+                        value="Secondary"
+                        onchange="updateLabel()"
+                      />
+                      ICT
+                    </label> -->
+
+                    <label class="checkbox-option">
+                      <input
+                        type="checkbox"
+                        name="grade_levels[]"
+                        class="grade-chk"
+                        value="Secondary"
+                        onchange="updateLabel()"
+                      />
+                      Social Science
+                    </label>
+
                     <label class="checkbox-option">
                       <input
                         type="checkbox"
@@ -262,49 +315,80 @@
               </div>
 
               <hr class="form-divider" />
-              
+
               <div class="form-section">
-                            <h3 class="section-title">Select Your Preferred Event Location</h3>
-                            <div class="location-grid">
-                                <label class="loc-card">
-                                    <input type="radio" name="location" value="Dammam" required />
-                                    <div class="loc-content">
-                                        <span class="calendar-icon">
-                                            <img src="images/calendar.svg" alt="Calendar" class="loc-calendar-img" />
-                                        </span>
-                                        <div class="loc-text"><span>Dammam - 26 January</span></div>
-                                    </div>
-                                </label>
-                                <label class="loc-card">
-                                    <input type="radio" name="location" value="Jeddah" />
-                                    <div class="loc-content">
-                                        <span class="calendar-icon">
-                                            <img src="images/calendar.svg" alt="Calendar" class="loc-calendar-img" />
-                                        </span>
-                                        <div class="loc-text"><span>Jeddah - 27 January</span></div>
-                                    </div>
-                                </label>
-                                <label class="loc-card">
-                                    <input type="radio" name="location" value="Riyadh" />
-                                    <div class="loc-content">
-                                        <span class="calendar-icon">
-                                            <img src="images/calendar.svg" alt="Calendar" class="loc-calendar-img" />
-                                        </span>
-                                        <div class="loc-text"><span>Riyadh - 27 January</span></div>
-                                    </div>
-                                </label>
-                                <label class="loc-card">
-                                    <input type="radio" name="location" value="Dubai" />
-                                    <div class="loc-content">
-                                        <span class="calendar-icon">
-                                            <img src="images/calendar.svg" alt="Calendar" class="loc-calendar-img" />
-                                        </span>
-                                        <div class="loc-text"><span>Dubai - 31 January</span></div>
-                                    </div>
-                                </label>
-                            </div>
-                        </div>
-                        
+                <h3 class="section-title">
+                  Select Your Preferred Event Location
+                </h3>
+                <div class="location-grid">
+                  <label class="loc-card">
+                    <input
+                      type="radio"
+                      name="location"
+                      value="Dammam"
+                      required
+                    />
+                    <div class="loc-content">
+                      <span class="calendar-icon">
+                        <img
+                          src="images/calendar.svg"
+                          alt="Calendar"
+                          class="loc-calendar-img"
+                        />
+                      </span>
+                      <div class="loc-text">
+                        <span>Dammam - 26 January</span>
+                      </div>
+                    </div>
+                  </label>
+                  <label class="loc-card">
+                    <input type="radio" name="location" value="Jeddah" />
+                    <div class="loc-content">
+                      <span class="calendar-icon">
+                        <img
+                          src="images/calendar.svg"
+                          alt="Calendar"
+                          class="loc-calendar-img"
+                        />
+                      </span>
+                      <div class="loc-text">
+                        <span>Jeddah - 27 January</span>
+                      </div>
+                    </div>
+                  </label>
+                  <label class="loc-card">
+                    <input type="radio" name="location" value="Riyadh" />
+                    <div class="loc-content">
+                      <span class="calendar-icon">
+                        <img
+                          src="images/calendar.svg"
+                          alt="Calendar"
+                          class="loc-calendar-img"
+                        />
+                      </span>
+                      <div class="loc-text">
+                        <span>Riyadh - 27 January</span>
+                      </div>
+                    </div>
+                  </label>
+                  <label class="loc-card">
+                    <input type="radio" name="location" value="Dubai" />
+                    <div class="loc-content">
+                      <span class="calendar-icon">
+                        <img
+                          src="images/calendar.svg"
+                          alt="Calendar"
+                          class="loc-calendar-img"
+                        />
+                      </span>
+                      <div class="loc-text">
+                        <span>Dubai - 31 January</span>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
               <div class="form-actions">
                 <button type="submit" class="btn-submit-modern">
                   Submit Registration
