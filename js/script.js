@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const registrationForm = document.getElementById('registrationForm');
-    const scriptURL = 'https://script.google.com/macros/s/AKfycby21-3ftg6ajjN0HuzmgBoUztr76qDXH3XLnNY8ywnXbyD-U60NwC2_ylnJ925lCJ77JQ/exec'; // <--- Paste your App Script URL here
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzhqWMPjKN7YbsltH-VZcCsmZ2H_5hCmu5aRewVuHl4HtsgHS9LopxDNZk2LRdmlw5xVw/exec'; // <--- Paste your App Script URL here
 
     registrationForm.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -37,65 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-
-// document.addEventListener('DOMContentLoaded', function() {
-//     const registrationForm = document.getElementById('registrationForm');
-//     const scriptURL = 'https://script.google.com/macros/s/AKfycbx_o9it8P7O2vLSGmXPm2_Tq3sAmDMZhqNADe53dgwZCLxlllEero3_xmTuNyxV2_8W/exec';
-
-//     registrationForm.addEventListener('submit', function(e) {
-//         e.preventDefault();
-
-//         // 1. Validation for Grade Levels
-//         const checkedGrades = document.querySelectorAll('input[name="grade_levels[]"]:checked');
-//         if (checkedGrades.length === 0) {
-//             alert('Please select at least one Grade Level.');
-//             return;
-//         }
-
-//         // 2. UI Loading State
-//         const submitBtn = document.querySelector('.btn-submit-modern');
-//         const originalText = submitBtn.innerText;
-//         submitBtn.innerText = "Processing...";
-//         submitBtn.disabled = true;
-
-//         // 3. Prepare Data
-//         const formData = new FormData(registrationForm);
-        
-//         // Convert multi-select grades to a readable string for Email/Sheet
-//         const selectedGrades = Array.from(checkedGrades).map(cb => cb.value).join(', ');
-
-//         // Data object for EmailJS (Ensure keys match your EmailJS Template variables)
-//         const emailParams = {
-//             fullName: formData.get('fullName'),
-//             email: formData.get('email'),
-//             mobile: formData.get('mobile'),
-//             city: formData.get('city'),
-//             school: formData.get('school'),
-//             role: formData.get('role'),
-//             location: formData.get('location'),
-//             grade_levels: selectedGrades
-//         };
-
-//         // 4. Execute both requests in parallel
-//         const googleSheetRequest = fetch(scriptURL, { method: 'POST', body: formData });
-//         const emailJSRequest = emailjs.send("service_plpagse", "template_foy8dz9", emailParams);
-
-//         Promise.all([googleSheetRequest, emailJSRequest])
-//             .then(() => {
-//                 alert('Registration Successful! Your details are saved and a confirmation email has been sent.');
-//                 registrationForm.reset();
-//                 updateLabel(); // Reset the custom multiselect label
-//             })
-//             .catch(error => {
-//                 console.error('Error!', error);
-//                 alert('Submission failed. Please check your connection and try again.');
-//             })
-//             .finally(() => {
-//                 submitBtn.innerText = originalText;
-//                 submitBtn.disabled = false;
-//             });
-//     });
-// });
 
 function toggleDropdown() {
   const checkboxes = document.getElementById("checkboxes");

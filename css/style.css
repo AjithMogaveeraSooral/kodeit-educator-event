@@ -420,6 +420,13 @@ h1 {
   display: none;
 }
 
+.subject-options-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 10px;
+}
+
 .custom-radio input:checked + span {
   background: var(--accent-blue);
   color: #ffffff;
@@ -444,9 +451,17 @@ h1 {
   line-height: 1.2;
 }
 
+.subject-options-grid .custom-radio span,
+.role-options-grid .custom-radio span {
+  min-height: 40px;
+  padding: 6px 10px;
+  font-size: 13px;
+}
+
 .custom-multiselect {
   position: relative;
   width: 100%;
+  padding-top: 10px;
 }
 
 .select-box {
@@ -643,6 +658,9 @@ h1 {
     grid-template-columns: 1fr;
   }
   .role-options-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .subject-options-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
