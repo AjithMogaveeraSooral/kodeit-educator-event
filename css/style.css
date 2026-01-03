@@ -44,7 +44,7 @@ h1, h2, h3 {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 50px;
-  gap: 30px;
+  gap: 0px;
   animation: fadeInUp 0.8s ease-out forwards;
 }
 
@@ -625,8 +625,16 @@ h1 {
     grid-template-columns: 1fr;
   }
   .event-header {
-    flex-direction: column;
+    flex-direction: column-reverse; 
     text-align: center;
+    gap: 20px;
+  }
+  .header-logo {
+    margin-bottom: 20px;
+  }
+
+  .main-logo {
+    max-width: 200px;
   }
   h1 {
     font-size: 36px;
