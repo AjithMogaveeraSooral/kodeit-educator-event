@@ -671,16 +671,22 @@ h1 {
     background-position: center;
     padding: 20px;
     border-radius: 20px;
-    min-height: 100px;
+    min-height: auto !important;
     display: flex;
     flex-direction: column;
     background-color: #ECF1FA;
-  }
-  .why-register-box {
-    padding: 15px;
-    margin-bottom: 30px;
+    padding: 15px 15px 0 15px; 
+    margin-bottom: 20px;
   }
 
+.geometric-shape {
+    display: none;
+  }
+
+  .why-register-content {
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
   .form-actions {
     display: flex;
     flex-direction: column !important;
