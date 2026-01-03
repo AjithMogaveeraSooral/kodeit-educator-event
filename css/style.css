@@ -422,7 +422,7 @@ h1 {
 
 .subject-options-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 12px;
   margin-top: 10px;
 }
@@ -671,7 +671,7 @@ h1 {
     background-position: center;
     padding: 20px;
     border-radius: 20px;
-    min-height: 150px;
+    min-height: 100px;
     display: flex;
     flex-direction: column;
     background-color: #ECF1FA;
