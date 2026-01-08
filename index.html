@@ -114,29 +114,54 @@
               </div>
 
               <div class="form-group">
-                <label for="mobile" class="form-label"
-                  >Mobile Number (WhatsApp)
-                  <span class="required">*</span></label
-                >
+                <label for="mobile" class="form-label">
+                  Mobile Number (WhatsApp) <span class="required">*</span>
+                </label>
+
                 <div class="phone-input-container">
-                  <div class="flag-wrapper">
-                    <img
-                      src="images/uae-flag.svg"
-                      alt="UAE Flag"
-                      class="phone-flag-img"
-                    />
-                    <span class="country-code">+971</span>
+                  <div class="custom-dropdown" id="countryDropdown">
+                    <div class="dropdown-trigger" onclick="toggleDropdown()">
+                      <img
+                        src="images/uae-flag.svg"
+                        alt="UAE"
+                        id="selected-flag"
+                        class="phone-flag-img"
+                      />
+                      <span id="selected-code" class="country-code">+971</span>
+                      <span class="dropdown-arrow">▼</span>
+                    </div>
+
+                    <ul class="dropdown-menu" id="dropdownMenu">
+                      <li
+                        onclick="selectCountry('+971', 'images/uae-flag.svg')"
+                      >
+                        <img src="images/uae-flag.svg" alt="UAE" /> +971
+                      </li>
+                      <li
+                        onclick="selectCountry('+966', 'images/saudi_flag.jpg')"
+                      >
+                        <img src="images/saudi_flag.jpg" alt="Saudi" /> +966
+                      </li>
+                    </ul>
                   </div>
+
                   <div class="vertical-line"></div>
+
                   <input
                     type="tel"
                     id="mobile"
                     name="mobile"
                     class="form-input phone-input"
-                    placeholder="50 123 4567"
+                    placeholder="Enter your mobile number"
                     required
                   />
                 </div>
+                <input
+                  type="hidden"
+                  name="country_code"
+                  id="country_code_input"
+                  value="+971"
+                />
               </div>
 
               <div class="form-group">
@@ -148,7 +173,7 @@
                   id="city"
                   name="city"
                   class="form-input"
-                  placeholder="Dubai"
+                  placeholder="Enter your city"
                   required
                 />
               </div>
@@ -168,7 +193,7 @@
                     id="school"
                     name="school"
                     class="form-input"
-                    placeholder="International School of Arts"
+                    placeholder="Enter your school/institute name"
                     required
                   />
                 </div>
@@ -315,37 +340,31 @@
               </div>
 
               <div class="form-group">
-                  <label class="form-label"
-                    >Which subject would you like to participate in?<span class="required">*</span></label
-                  >
-                  <div class="subject-options-grid">
-                    <label class="custom-radio">
-                      <input
-                        type="radio"
-                        name="subject"
-                        value="KG"
-                        required
-                      />
-                      <span>KG</span>
-                    </label>
-                    <label class="custom-radio">
-                      <input
-                        type="radio"
-                        name="subject"
-                        value="ICT/Computing"
-                      />
-                      <span>ICT/Computing</span>
-                    </label>
-                    <label class="custom-radio">
-                      <input type="radio" name="subject" value="ICT Head" />
-                      <span>Social Science</span>
-                    </label>
-                    <!-- <label class="custom-radio">
+                <label class="form-label"
+                  >Which subject would you like to participate in?<span
+                    class="required"
+                    >*</span
+                  ></label
+                >
+                <div class="subject-options-grid">
+                  <label class="custom-radio">
+                    <input type="radio" name="subject" value="KG" required />
+                    <span>KG</span>
+                  </label>
+                  <label class="custom-radio">
+                    <input type="radio" name="subject" value="ICT/Computing" />
+                    <span>ICT/Computing</span>
+                  </label>
+                  <label class="custom-radio">
+                    <input type="radio" name="subject" value="ICT Head" />
+                    <span>Social Science</span>
+                  </label>
+                  <!-- <label class="custom-radio">
                       <input type="radio" name="subject" value="Other" />
                       <span>Other</span>
                     </label> -->
-                  </div>
                 </div>
+              </div>
 
               <hr class="form-divider" />
 

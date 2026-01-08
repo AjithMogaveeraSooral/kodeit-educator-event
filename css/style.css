@@ -522,6 +522,99 @@ h1 {
   cursor: pointer;
 }
 
+.country-dropdown-container {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  position: relative;
+  background: transparent;
+}
+
+.country-select {
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 5px;
+}
+
+.phone-flag-img {
+  width: 24px;
+  height: auto;
+  margin-right: 8px;
+  border-radius: 2px;
+}
+
+.country-dropdown-container::after {
+  content: '▼';
+  font-size: 8px;
+  margin-left: 2px;
+  color: #666;
+  pointer-events: none;
+}
+
+.custom-dropdown {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.dropdown-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  user-select: none;
+}
+
+.dropdown-arrow {
+  font-size: 8px;
+  color: #888;
+  margin-left: 2px;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  list-style: none;
+  padding: 5px 0;
+  margin-top: 5px;
+  z-index: 100;
+  width: 120px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.dropdown-menu li {
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.2s;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f5f5f5;
+}
+
+.dropdown-menu img {
+  width: 20px;
+  height: auto;
+}
+
+.show {
+  display: block;
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;

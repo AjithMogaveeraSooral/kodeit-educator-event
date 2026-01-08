@@ -17,6 +17,12 @@ document.addEventListener('DOMContentLoaded', function() {
         submitBtn.disabled = true;
 
         const formData = new FormData(registrationForm);
+        
+        const countryCode = document.getElementById('country_code_input').value;
+        let mobileNumber = document.getElementById('mobile').value.trim();
+        mobileNumber = mobileNumber.replace(/^0+/, '');
+        
+        formData.set('mobile', countryCode +' '+ mobileNumber);
 
         fetch(scriptURL, { 
             method: 'POST', 
@@ -41,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function toggleDropdown() {
   const checkboxes = document.getElementById("checkboxes");
   checkboxes.style.display = checkboxes.style.display === "block" ? "none" : "block";
+  document.getElementById("dropdownMenu").classList.toggle("show");
 }
 
 function toggleSelectAll(source) {
@@ -73,4 +80,18 @@ window.onclick = function(event) {
   if (!event.target.closest('.custom-multiselect')) {
     document.getElementById("checkboxes").style.display = "none";
   }
+
+  if (!event.target.closest('.custom-dropdown')) {
+    var dropdowns = document.getElementsByClassName("dropdown-menu");
+    for (var i = 0; i < dropdowns.length; i++) {
+      dropdowns[i].classList.remove('show');
+    }
+  }
+}
+
+function selectCountry(code, flagSrc) {
+  document.getElementById("selected-flag").src = flagSrc;
+  document.getElementById("selected-code").innerText = code;  
+  document.getElementById("country_code_input").value = code;
+  document.getElementById("dropdownMenu").classList.remove("show");
 }
