@@ -21,8 +21,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const countryCode = document.getElementById('country_code_input').value;
         let mobileNumber = document.getElementById('mobile').value.trim();
         mobileNumber = mobileNumber.replace(/^0+/, '');
-        
-        formData.set('mobile', countryCode +' '+ mobileNumber);
+
+        const cleanCountryCode = countryCode.replace('+', '');
+        formData.set('mobile', cleanCountryCode +' '+ mobileNumber);
 
         fetch(scriptURL, { 
             method: 'POST', 
